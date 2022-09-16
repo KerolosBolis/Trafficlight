@@ -1,0 +1,252 @@
+###############################################################################
+#
+# IAR ELF Linker V9.20.4.327/W64 for ARM                  04/Jun/2022  21:53:12
+# Copyright 2007-2022 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\DELL\Desktop\SECOND TERM\Intro to embedded
+#        systems\Traffic_Light_Project\Debug\Exe\Traffic_Light_Project.out
+#    Map file     =
+#        C:\Users\DELL\Desktop\SECOND TERM\Intro to embedded
+#        systems\Traffic_Light_Project\Debug\List\Traffic_Light_Project.map
+#    Command line =
+#        -f "C:\Users\DELL\Desktop\SECOND TERM\Intro to embedded
+#        systems\Traffic_Light_Project\Debug\Exe\Traffic_Light_Project.out.rsp"
+#        ("C:\Users\DELL\Desktop\SECOND TERM\Intro to embedded
+#        systems\Traffic_Light_Project\Debug\Obj\cstartup_M.o"
+#        "C:\Users\DELL\Desktop\SECOND TERM\Intro to embedded
+#        systems\Traffic_Light_Project\Debug\Obj\DIO.o"
+#        "C:\Users\DELL\Desktop\SECOND TERM\Intro to embedded
+#        systems\Traffic_Light_Project\Debug\Obj\GPTM.o"
+#        "C:\Users\DELL\Desktop\SECOND TERM\Intro to embedded
+#        systems\Traffic_Light_Project\Debug\Obj\handlers.o"
+#        "C:\Users\DELL\Desktop\SECOND TERM\Intro to embedded
+#        systems\Traffic_Light_Project\Debug\Obj\leds.o"
+#        "C:\Users\DELL\Desktop\SECOND TERM\Intro to embedded
+#        systems\Traffic_Light_Project\Debug\Obj\main.o"
+#        "C:\Users\DELL\Desktop\SECOND TERM\Intro to embedded
+#        systems\Traffic_Light_Project\Debug\Obj\switches.o"
+#        "C:\Users\DELL\Desktop\SECOND TERM\Intro to embedded
+#        systems\Traffic_Light_Project\Debug\Obj\SYSTICK.o" --no_out_extension
+#        -o "C:\Users\DELL\Desktop\SECOND TERM\Intro to embedded
+#        systems\Traffic_Light_Project\Debug\Exe\Traffic_Light_Project.out"
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map "C:\Users\DELL\Desktop\SECOND TERM\Intro to embedded
+#        systems\Traffic_Light_Project\Debug\List\Traffic_Light_Project.map"
+#        --config "C:\Program Files\IAR Systems\Embedded Workbench
+#        9.0\arm\config\linker\TexasInstruments\TM4C123GH6.icf" --semihosting
+#        C:\ti\TivaWare_C_Series-2.2.0.295\driverlib\ewarm\Exe\driverlib.a
+#        --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x3'ffff] { ro };
+define block CSTACK with size = 4K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'7fff] {
+          rw, block CSTACK, block HEAP };
+
+  Section          Kind         Address    Size  Object
+  -------          ----         -------    ----  ------
+"A0":                                      0xbc
+  .intvec          const            0x0    0xbc  cstartup_M.o [1]
+                                 - 0xbc    0xbc
+
+"P1":                                     0xb7c
+  .text            ro code         0xbc   0x4f4  DIO.o [1]
+  .text            ro code        0x5b0   0x2ec  handlers.o [1]
+  .text            ro code        0x89c   0x108  GPTM.o [1]
+  .text            ro code        0x9a4    0xc8  switches.o [1]
+  .text            ro code        0xa6c    0x74  leds.o [1]
+  .text            ro code        0xae0    0x5c  main.o [1]
+  .text            ro code        0xb3c    0x38  zero_init3.o [4]
+  .text            ro code        0xb74    0x28  data_init.o [4]
+  .text            ro code        0xb9c    0x22  fpinit_M.o [3]
+  .iar.init_table  const          0xbc0    0x10  - Linker created -
+  .text            ro code        0xbd0     0x2  cstartup_M.o [1]
+  .text            ro code        0xbd4    0x1e  cmain.o [4]
+  .text            ro code        0xbf2     0x4  low_level_init.o [2]
+  .text            ro code        0xbf6     0x4  exit.o [2]
+  .text            ro code        0xbfa     0x2  cstartup_M.o [1]
+  .text            ro code        0xbfc     0xa  cexit.o [4]
+  .text            ro code        0xc06     0x2  cstartup_M.o [1]
+  .text            ro code        0xc08    0x14  exit.o [5]
+  .text            ro code        0xc1c    0x10  cstartup_M.o [1]
+  .text            ro code        0xc2c     0x2  cstartup_M.o [1]
+  .text            ro code        0xc2e     0x2  cstartup_M.o [1]
+  .text            ro code        0xc30     0x2  cstartup_M.o [1]
+  .text            ro code        0xc32     0x2  cstartup_M.o [1]
+  .text            ro code        0xc34     0x2  cstartup_M.o [1]
+  .text            ro code        0xc36     0x2  cstartup_M.o [1]
+  .rodata          const          0xc38     0x0  zero_init3.o [4]
+                                - 0xc38   0xb7c
+
+"P2", part 1 of 2:                          0x4
+  .bss             zero     0x2000'0000     0x1  handlers.o [1]
+  .bss             zero     0x2000'0001     0x1  handlers.o [1]
+  .bss             zero     0x2000'0002     0x1  handlers.o [1]
+  .bss             zero     0x2000'0003     0x1  handlers.o [1]
+                          - 0x2000'0004     0x4
+
+"P2", part 2 of 2:                       0x1000
+  CSTACK                    0x2000'0008  0x1000  <Block>
+    CSTACK         uninit   0x2000'0008  0x1000  <Block tail>
+                          - 0x2000'1008  0x1000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+        0xc38     0x3'ffff  0x3'f3c8
+  0x2000'0004  0x2000'0007       0x4
+  0x2000'1008  0x2000'7fff    0x6ff8
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x4:
+          0x2000'0000   0x4
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+command line/config:
+    -------------------------------------------
+    Total:
+
+C:\Users\DELL\Desktop\SECOND TERM\Intro to embedded systems\Traffic_Light_Project\Debug\Obj: [1]
+    DIO.o               1'268
+    GPTM.o                264
+    cstartup_M.o           34      188
+    handlers.o            748                 4
+    leds.o                116
+    main.o                 92
+    switches.o            200
+    -------------------------------------------
+    Total:              2'722      188        4
+
+dl7M_tln.a: [2]
+    exit.o                  4
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                  8
+
+m7M_tls.a: [3]
+    fpinit_M.o             34
+    -------------------------------------------
+    Total:                 34
+
+rt7M_tl.a: [4]
+    cexit.o                10
+    cmain.o                30
+    data_init.o            40
+    zero_init3.o           56
+    -------------------------------------------
+    Total:                136
+
+shb_l.a: [5]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                    2        2
+    Linker created                  16    4'096
+-----------------------------------------------
+    Grand Total:        2'922      206    4'100
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base         0xbc0          --   Gb  - Linker created -
+.iar.init_table$$Limit        0xbd0          --   Gb  - Linker created -
+?main                         0xbd5         Code  Gb  cmain.o [4]
+CSTACK$$Base            0x2000'0008          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'1008          --   Gb  - Linker created -
+DIO_Init                       0xbd  0x288  Code  Gb  DIO.o [1]
+DIO_ReadPin                   0x4c5   0x64  Code  Gb  DIO.o [1]
+DIO_WritePin                  0x345  0x138  Code  Gb  DIO.o [1]
+DIO_WritePort                 0x47d   0x48  Code  Gb  DIO.o [1]
+GPIOPortF_Handler             0x817   0x4a  Code  Gb  handlers.o [1]
+Region$$Table$$Base           0xbc0          --   Gb  - Linker created -
+Region$$Table$$Limit          0xbd0          --   Gb  - Linker created -
+SW1_Init                      0x9a5   0x56  Code  Gb  switches.o [1]
+SW2_Init                      0x9fb   0x56  Code  Gb  switches.o [1]
+Timer0A_Enable                0x89d   0x50  Code  Gb  GPTM.o [1]
+Timer0A_Handler               0x7fd   0x1a  Code  Gb  handlers.o [1]
+Timer1A_Enable                0x8ed   0x50  Code  Gb  GPTM.o [1]
+Timer1A_Handler               0x861   0x10  Code  Gb  handlers.o [1]
+__cmain                       0xbd5         Code  Gb  cmain.o [4]
+__exit                        0xc09   0x14  Code  Gb  exit.o [5]
+__iar_data_init3              0xb75   0x28  Code  Gb  data_init.o [4]
+__iar_init_vfp                0xb9d         Code  Gb  fpinit_M.o [3]
+__iar_program_start           0xc1d   0x10  Code  Gb  cstartup_M.o [1]
+__iar_zero_init3              0xb3d   0x38  Code  Gb  zero_init3.o [4]
+__low_level_init              0xbf3    0x4  Code  Gb  low_level_init.o [2]
+__vector_table                  0x0   0xbc  Data  Gb  cstartup_M.o [1]
+_call_main                    0xbe1         Code  Gb  cmain.o [4]
+_exit                         0xbfd         Code  Gb  cexit.o [4]
+exit                          0xbf7    0x4  Code  Gb  exit.o [2]
+flag_pedestrian1        0x2000'0002    0x1  Data  Gb  handlers.o [1]
+flag_pedestrian2        0x2000'0003    0x1  Data  Gb  handlers.o [1]
+flag_traffic1           0x2000'0000    0x1  Data  Gb  handlers.o [1]
+flag_traffic2           0x2000'0001    0x1  Data  Gb  handlers.o [1]
+main                          0xae1   0x5c  Code  Gb  main.o [1]
+pedestrian_mode               0x673  0x18a  Code  Gb  handlers.o [1]
+pedestrian_traffic1           0xab1   0x18  Code  Gb  leds.o [1]
+pedestrian_traffic2           0xac9   0x18  Code  Gb  leds.o [1]
+timer1A_delay1000MS           0x93d   0x20  Code  Gb  GPTM.o [1]
+traffic1_init                 0xa6d   0x22  Code  Gb  leds.o [1]
+traffic2_init                 0xa8f   0x22  Code  Gb  leds.o [1]
+traffic_normal_mode           0x5b1   0xc2  Code  Gb  handlers.o [1]
+
+
+[1] = C:\Users\DELL\Desktop\SECOND TERM\Intro to embedded systems\Traffic_Light_Project\Debug\Obj
+[2] = dl7M_tln.a
+[3] = m7M_tls.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  2'922 bytes of readonly  code memory
+    206 bytes of readonly  data memory
+  4'100 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
